@@ -1,0 +1,66 @@
+Sub Logics()
+    Dim edss As edss
+    Set edss = New edss
+    edss.Web_Service (UFE)
+    Dim COSMOS As New COSMOS
+    Call COSMOS.ChangeScreen(session, "CL201")
+    Call COSMOS.SendAuditNum(AuditNum, 4, 13)
+    Call COSMOS.SendSubAuditNum(SubAuditNum, 4, 24)
+    COSMOS.PressEnter
+    If CL202_called = True Then
+        ICD1 = Trim(objEmulator.autECLPS.getText(9, 12, 8))
+        ICD2 = Trim(objEmulator.autECLPS.getText(9, 24, 8))
+        ICD3 = Trim(objEmulator.autECLPS.getText(9, 36, 8))
+        ICD4 = Trim(objEmulator.autECLPS.getText(9, 48, 8))
+        ICD5 = Trim(objEmulator.autECLPS.getText(9, 60, 8))
+        ICD6 = Trim(objEmulator.autECLPS.getText(9, 72, 8))
+        ICD7 = Trim(objEmulator.autECLPS.getText(10, 12, 8))
+        ICD8 = Trim(objEmulator.autECLPS.getText(10, 24, 8))
+        ICD9 = Trim(objEmulator.autECLPS.getText(10, 36, 8))
+        ICD10 = Trim(objEmulator.autECLPS.getText(10, 48, 8))
+        ICD11 = Trim(objEmulator.autECLPS.getText(10, 60, 8))
+        ICD12 = Trim(objEmulator.autECLPS.getText(10, 72, 8))
+        
+        If ICD1 <> edss.ICD1 Then
+            ActiveCell.Cells(0, 5).Value = "ICD1 is not matching with EDSS"
+        End If
+        If ICD2 <> edss.ICD2 Then
+            ActiveCell.Cells(0, 5).Value = "ICD2 is not matching with EDSS"
+        End If
+        If ICD3 <> edss.ICD3 Then
+            ActiveCell.Cells(0, 5).Value = "ICD3 is not matching with EDSS"
+        End If
+        If ICD4 <> edss.ICD4 Then
+            ActiveCell.Cells(0, 5).Value = "ICD4 is not matching with EDSS"
+        End If
+        If ICD5 <> edss.ICD5 Then
+            ActiveCell.Cells(0, 5).Value = "ICD5 is not matching with EDSS"
+        End If
+        If ICD6 <> edss.ICD6 Then
+            ActiveCell.Cells(0, 5).Value = "ICD6 is not matching with EDSS"
+        End If
+        If ICD7 <> edss.ICD7 Then
+            ActiveCell.Cells(0, 5).Value = "ICD7 is not matching with EDSS"
+        End If
+        If ICD8 <> edss.ICD8 Then
+            ActiveCell.Cells(0, 5).Value = "ICD8 is not matching with EDSS"
+        End If
+        If ICD9 <> edss.ICD9 Then
+            ActiveCell.Cells(0, 5).Value = "ICD9 is not matching with EDSS"
+        End If
+        If ICD10 <> edss.ICD10 Then
+            ActiveCell.Cells(0, 5).Select = "ICD10 is not matching with EDSS"
+        End If
+        If ICD11 <> edss.ICD11 Then
+            ActiveCell.Cells(0, 5).Select = "ICD11 is not matching with EDSS"
+        End If
+        If ICD12 <> edss.ICD12 Then
+            ActiveCell.Cells(0, 5).Select = "ICD12 is not matching with EDSS"
+        End If
+    End If
+    Patient_Ac_Num = Trim(objEmulator.autECLPS.getText(8, 64, 16))
+    If Patient_Ac_Num <> edss.Patient_Ac_Num Then
+        ActiveCell.Cells(0, 5).Select = "Patient_Ac_Num is not matching with EDSS"
+    End If
+    
+End Sub
